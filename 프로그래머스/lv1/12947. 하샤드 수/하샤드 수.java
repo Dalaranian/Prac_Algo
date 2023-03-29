@@ -1,10 +1,11 @@
 class Solution {
     public boolean solution(int x) {
-		String numStr = Integer.toString(x);
-		int total = 0;
-		for (char c : numStr.toCharArray()) {
-			total += Character.getNumericValue(c);
-		};
-		return x % total == 0?true:false;
+        int total = 0;
+        int num = x;
+        while (num > 0) {
+            total += num % 10;
+            num /= 10;
+        }
+        return x % total == 0;
     }
 }
