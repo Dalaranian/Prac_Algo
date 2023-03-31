@@ -5,7 +5,7 @@ class Solution {
             c = (a + b) % 1234567;
             a = b;
             b = c;
-        }
+        } // 동적 계획법
         return c;
     }
 }
