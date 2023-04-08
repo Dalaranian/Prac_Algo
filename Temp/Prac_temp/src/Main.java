@@ -11,13 +11,24 @@ public class Main {
 	}
 	
     public static int[] solution(int[] emergency) {
-        int[] arr = emergency.clone();
-        Arrays.sort(arr);
-        for(int i:arr) {
-        	System.out.println(i);
-        }
-        
+    	int[] arr = emergency.clone();
+    	Arrays.sort(arr);
+    	for(int i:arr) {
+    		int index = GetIndex(i, emergency);
+    		System.out.println(index);
+    	}
         return null;
     }
+
+	private static int GetIndex(int i, int[] arr) {
+		// TODO Auto-generated method stub
+		for(int index = 0;i<arr.length;i++) {
+			System.out.println(i + " " + index);
+			if(i == arr[index]) {
+				return index + 1;
+			}
+		}
+		return 0;
+	}
 
 }
