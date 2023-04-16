@@ -2,36 +2,30 @@ import java.util.*;
 
 class Solution {
     public int[] solution(int[] array, int[][] commands) {
-        Queue<Integer> st = new LinkedList<>();
-        for (int[] temp : commands) {
-            System.out.println(Arrays.toString(temp));
-            List<Integer> list = new ArrayList<>();
-            int start = temp[0];
-            int end = temp[1];
-            for (int i = start - 1; i <= end - 1; i++) {
-                list.add(array[i]);
-            }
+        int[] answer = new int[commands.length];
 
-            // 선택정렬
-            for (int i = 0; i < list.size() - 1; i++) {
-                int minIndex = i;
-                for (int j = i + 1; j < list.size(); j++) {
-                    if (list.get(j) < list.get(minIndex)) {
-                        minIndex = j;
+        for (int i = 0; i < commands.length; i++) {
+            int start = commands[i][0] - 1;
+            int end = commands[i][1];
+            int k = commands[i][2] - 1;
+
+            int[] subArray = Arrays.copyOfRange(array, start, end);
+
+            for (int j = 0; j < subArray.length - 1; j++) {
+                int minIndex = j;
+                for (int m = j + 1; m < subArray.length; m++) {
+                    if (subArray[m] < subArray[minIndex]) {
+                        minIndex = m;
                     }
                 }
-                int tempNum = list.get(minIndex);
-                list.set(minIndex, list.get(i));
-                list.set(i, tempNum);
+                int temp = subArray[j];
+                subArray[j] = subArray[minIndex];
+                subArray[minIndex] = temp;
             }
 
-            st.add(list.get(temp[2] - 1));
+            answer[i] = subArray[k];
         }
 
-        int[] answer = new int[commands.length];
-        for (int i = 0; i <= answer.length - 1; i++) {
-            answer[i] = st.poll();
-        }
         return answer;
     }
 }
