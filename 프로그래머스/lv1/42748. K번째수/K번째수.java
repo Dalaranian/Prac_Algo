@@ -10,7 +10,7 @@ class Solution {
             int k = commands[i][2] - 1;
 
             int[] subArray = Arrays.copyOfRange(array, start, end);
-
+            // 선택정렬(Selection Sort)
             for (int j = 0; j < subArray.length - 1; j++) {
                 int minIndex = j;
                 for (int m = j + 1; m < subArray.length; m++) {
