@@ -8,18 +8,10 @@ class Solution {
 
     private int dfs(int[] numbers, int target, boolean[] visited, int index, int sum) {
         if (index == numbers.length) {
-            if (sum == target) {
-                return 1;
-            }
-            return 0;
+            return (sum == target) ? 1 : 0;
         }
 
-        int count = 0;
-        visited[index] = true;
-        count += dfs(numbers, target, visited, index + 1, sum + numbers[index]);
-        count += dfs(numbers, target, visited, index + 1, sum - numbers[index]);
-        visited[index] = false;
-
-        return count;
+        return dfs(numbers, target, visited, index + 1, sum + numbers[index]) 
+               + dfs(numbers, target, visited, index + 1, sum - numbers[index]);
     }
 }
