@@ -2,12 +2,9 @@ import java.util.*;
 
 class Solution {
     public int solution(int a, int b) {
-        int num1 = Integer.parseInt(""+a+b);
-        int num2 = Integer.parseInt(""+b+a);
-        if(num1 >= num2){
-            return num1;
-        }else{
-            return num2;
-        }
+        int answer = 0;
+        int numA = Integer.parseInt(""+a+b);
+        int numB = Integer.parseInt(""+b+a);
+        return numA>=numB?numA:numB;
     }
 }
