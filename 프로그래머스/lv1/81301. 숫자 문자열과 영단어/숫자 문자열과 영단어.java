@@ -2,7 +2,7 @@ import java.util.HashMap;
 
 class Solution {
     public int solution(String s) {
-        HashMap<String, String> wordToNum = new HashMap<String, String>();
+        HashMap<String, String> wordToNum = new HashMap<>();
         wordToNum.put("zero", "0");
         wordToNum.put("one", "1");
         wordToNum.put("two", "2");
@@ -13,11 +13,10 @@ class Solution {
         wordToNum.put("seven", "7");
         wordToNum.put("eight", "8");
         wordToNum.put("nine", "9");
-        
+
         StringBuilder sb = new StringBuilder();
         StringBuilder word = new StringBuilder();
-        for (int i = 0; i < s.length(); i++) {
-            char c = s.charAt(i);
+        for (char c : s.toCharArray()) {
             if (Character.isDigit(c)) {
                 sb.append(c);
             } else {
