@@ -8,7 +8,7 @@ class Solution {
             if(Character.isWhitespace(c)){
                 isFirstChar = true;
                 answer.append(" ");
-            }else if(isFirstChar && c != ' '){
+            }else if(isFirstChar && !Character.isWhitespace(c)){
                 answer.append(Character.toUpperCase(c));
                 isFirstChar = false;
             }else if(!isFirstChar){
