@@ -5,7 +5,7 @@ class Solution {
         boolean isFirstChar = true;
 
         for(char c:s.toCharArray()){
-            if(c == ' '){
+            if(Character.isWhitespace(c)){
                 isFirstChar = true;
                 answer.append(" ");
             }else if(isFirstChar && c != ' '){
