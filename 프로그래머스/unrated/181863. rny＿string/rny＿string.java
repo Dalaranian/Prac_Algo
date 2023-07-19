@@ -3,11 +3,7 @@ class Solution {
         StringBuffer strBuffer = new StringBuffer();
         
         for(char c:rny_string.toCharArray()){
-            if(c == 'm'){
-                strBuffer.append("rn");
-            }else{
-                strBuffer.append(c);
-            }
+            strBuffer.append(c == 'm' ? "rn" : c);
         }
         
         return strBuffer.toString();
