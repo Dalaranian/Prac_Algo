@@ -4,8 +4,8 @@ import java.util.Queue;
 
 class Solution {
     class Process {
-        int location;
-        int priority;
+        private int location;
+        private int priority;
 
         /**
          * @param location 프로세스 위치
@@ -19,34 +19,6 @@ class Solution {
         @Override
         public String toString() {
             return "Process [location=" + location + ", priority=" + priority + "]";
-        }
-
-        @Override
-        public int hashCode() {
-            final int prime = 31;
-            int result = 1;
-            result = prime * result + getEnclosingInstance().hashCode();
-            result = prime * result + location;
-            result = prime * result + priority;
-            return result;
-        }
-
-        @Override
-        public boolean equals(Object obj) {
-            if (this == obj)
-                return true;
-            if (obj == null)
-                return false;
-            if (getClass() != obj.getClass())
-                return false;
-            Process other = (Process) obj;
-            if (!getEnclosingInstance().equals(other.getEnclosingInstance()))
-                return false;
-            if (location != other.location)
-                return false;
-            if (priority != other.priority)
-                return false;
-            return true;
         }
 
         public int getLocation() {
