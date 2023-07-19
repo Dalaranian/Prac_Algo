@@ -7,7 +7,7 @@ class Solution {
         for(char c:s.toCharArray()){
             if(Character.isWhitespace(c)){
                 isFirstChar = true;
-                answer.append(" ");
+                answer.append(c);
             }else if(isFirstChar && !Character.isWhitespace(c)){
                 answer.append(Character.toUpperCase(c));
                 isFirstChar = false;
