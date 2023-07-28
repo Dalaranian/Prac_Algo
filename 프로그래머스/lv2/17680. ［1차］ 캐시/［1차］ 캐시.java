@@ -48,7 +48,6 @@ public class Solution {
      * @param city
      */
     private static void LRU(int executeTime, HashMap<String, Integer> cacheMem, String city) {
-        // 가장 마지막에 호출된 친구 찾기
         String minKey = null;
         int minValue = Integer.MAX_VALUE;
 
