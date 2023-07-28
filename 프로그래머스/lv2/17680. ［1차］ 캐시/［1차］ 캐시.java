@@ -16,10 +16,8 @@ public class Solution {
 
             String city = rowCity.toLowerCase();
 
-            // System.out.println(city + " 호출");
             // 캐시 적중했을 경우
             if (cacheMem.containsKey(city)) {
-                // System.out.println("적중됨");
                 // 실행시간 1 증가
                 executeTime += 1;
                 // 적중했으므로, 마지막 실행시간 업데이트
@@ -28,7 +26,6 @@ public class Solution {
             // 적중되지 않았을 떄
             else {
                 executeTime += 5;
-                // System.out.println("적중되지 않음");
                 // 캐시 메모리 여유공간이 있을 때,
                 if (cacheMem.size() < cacheSize) {
                     // 캐시에 적제후, 실행시간 업데이트
@@ -36,12 +33,9 @@ public class Solution {
                 }
                 // 여유공간이 없을 떄, LRU 교체
                 else {
-                    // System.out.println("여유공간 없음, 페이지 교체 알고리즘 실행");
-
                     LRU(executeTime, cacheMem, city);
                 }
             }
-            // System.out.println("이번 사이클 캐시 : " + cacheMem);
         }
 
         return executeTime;
@@ -65,7 +59,6 @@ public class Solution {
 
         // 가장 작은 값을 가진 요소를 제거
         if (minKey != null) {
-            // System.out.println("가장 작은 친구 제거 " + minKey);
             cacheMem.remove(minKey);
         }
 
