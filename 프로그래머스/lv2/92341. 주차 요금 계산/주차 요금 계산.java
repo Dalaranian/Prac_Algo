@@ -58,14 +58,14 @@ class Solution {
             if (cumulativeTime > basicTime) {
                 // 기본시간을 뺀 남은 시간이 나누어 떨어질 때,
                 if((cumulativeTime - basicTime) % extraTime == 0){
-                    answer[i] = basicFee + (((cumulativeTime - basicTime)/extraTime) * extraFee);
+                    answer[i] = calcFee(cumulativeTime);
                 }
                 // 나누어 떨어지지 않을 때,
                 else {
                     while((cumulativeTime - basicTime) % extraTime != 0){
                         cumulativeTime++;
                     }
-                    answer[i] = basicFee + (((cumulativeTime - basicTime)/extraTime) * extraFee);
+                    answer[i] = calcFee(cumulativeTime);
                 }
             //기본 시간을 넘지 않았을 때,
             } else if(cumulativeTime <= basicTime){
@@ -74,5 +74,9 @@ class Solution {
         }
 
         return answer;
+    }
+
+    private int calcFee(int cumulativeTime) {
+        return basicFee + (((cumulativeTime - basicTime)/extraTime) * extraFee);
     }
 }
