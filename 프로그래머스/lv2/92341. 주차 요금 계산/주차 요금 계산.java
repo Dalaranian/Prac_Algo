@@ -67,6 +67,7 @@ class Solution {
                     }
                     answer[i] = basicFee + (((cumulativeTime - basicTime)/extraTime) * extraFee);
                 }
+            //기본 시간을 넘지 않았을 때,
             } else if(cumulativeTime <= basicTime){
                 answer[i] = basicFee;
             }
