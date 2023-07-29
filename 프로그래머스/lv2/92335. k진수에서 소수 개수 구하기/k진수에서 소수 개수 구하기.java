@@ -24,7 +24,7 @@ public class Solution {
         // BigInteger 를 활용한 소수 구하기
         for (String str : list) {
             BigInteger num = BigInteger.valueOf(Long.parseLong(str));
-            if (num.isProbablePrime(100)) {
+            if (num.isProbablePrime(10)) {
                 answer++;
             }
         }
