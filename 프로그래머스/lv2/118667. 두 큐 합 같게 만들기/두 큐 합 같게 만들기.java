@@ -8,7 +8,7 @@ public class Solution {
 
         long totalAll = sumQueue(queue1) + sumQueue(queue2);
 
-        // 성립이 안되는 조건
+        // 종료 조건 1. 해가 성립이 안됨
         if (totalAll % 2 != 0) {
             return -1;
         } else {
@@ -18,12 +18,12 @@ public class Solution {
             long queue2Total = sumQueue(queue2);
             // 로직 시작
             while (true) {
-                // 종료 조건 1. 모두 탐색해도 안됨
+                // 종료 조건 2. 모두 탐색해도 안됨
                 if (count > (ints1.length + ints2.length) * 2) {
                     count = -1;
                     break;
                 }
-                // 종료 조건 2. 두 큐의 크기가 동일해, 정답을 구함
+                // 종료 조건 3. 두 큐의 크기가 동일해, 정답을 구함
                 if (queue1Total == target && queue2Total == target) {
                     break;
                 } else if (queue1Total > target) {
