@@ -35,6 +35,7 @@ class Solution {
             }
         }
 
+        // DFS 로직 실행을 위한 탐색
         for (int i = 0; i < parsedMap.length; i++) {
             for (int j = 0; j < parsedMap[i].length; j++) {
                 int sum = doSearch(i, j);
