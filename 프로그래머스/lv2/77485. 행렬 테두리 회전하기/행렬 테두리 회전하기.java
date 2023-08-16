@@ -1,8 +1,11 @@
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
+import java.util.stream.Collectors;
 
 public class Solution {
     public int[] solution(int rows, int columns, int[][] queries) {
-        int[] answer = new int[queries.length];
+        List<Integer> answerList = new ArrayList<>();
         int[][] originArr = new int[rows][columns];
 
         // 배열 초기화
@@ -13,7 +16,6 @@ public class Solution {
             }
         }
 
-        int index = 0;
         for (int[] query : queries) {
             int startI = query[0] - 1;
             int startJ = query[1] - 1;
@@ -42,8 +44,10 @@ public class Solution {
 
             originArr[startI][startJ + 1] = temp;
 
-            answer[index++] = min;
+            answerList.add(min);
         }
+
+        int[] answer = answerList.stream().mapToInt(Integer::intValue).toArray();
         return answer;
     }
 }
