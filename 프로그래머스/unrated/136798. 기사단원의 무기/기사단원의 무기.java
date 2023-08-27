@@ -3,7 +3,7 @@ class Solution {
         // 기사단원 약수 갯수를 저장할 배열을 생성합니다.
         int[] knight = new int[number + 1];
 
-        // 에라토스테네스의 체 방식으로 각 숫자들이 몇 번 나누어지는지 계산합니다.
+        // 각 숫자들이 몇 번 나누어지는지 계산합니다.
         for (int i = 1; i <= number; i++) {
             for (int j = i; j <= number; j += i) {
                 knight[j]++;
