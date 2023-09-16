@@ -1,10 +1,10 @@
 # [level 0] 편지 - 120898 
 
-[문제 링크](https://school.programmers.co.kr/learn/courses/30/lessons/120898) 
+[문제 링크](https://school.programmers.co.kr/learn/courses/30/lessons/120898?language=go) 
 
 ### 성능 요약
 
-메모리: 80.2 MB, 시간: 0.02 ms
+메모리: 3.54 MB, 시간: 0.00 ms
 
 ### 구분
 
@@ -12,7 +12,7 @@
 
 ### 채점결과
 
-<br/>정확성: 100.0<br/>합계: 100.0 / 100.0
+Empty
 
 ### 문제 설명
 
