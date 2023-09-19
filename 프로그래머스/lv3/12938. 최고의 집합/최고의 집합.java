@@ -6,6 +6,7 @@ class Solution {
             // 종료조건 : 불가능할 경우
             return new int[]{-1};
         }
+        
         int[] result = new int[n];
         Arrays.fill(result, (s / n));
 
