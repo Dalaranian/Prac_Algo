@@ -3,7 +3,7 @@ import java.util.*;
 class Solution {
     public int[] solution(String[] id_list, String[] report, int k) {
         Map<String, HashSet<String>> reportMap = generateReportMap(id_list);
-        Map<String, Integer> index = getIndex(id_list);
+        Map<String, Integer> index = generateIndex(id_list);
         for (String s : report) {
             String[] currentReport = s.split(" ");
             reportMap.get(currentReport[1]).add(currentReport[0]);
@@ -21,7 +21,7 @@ class Solution {
         return result;
     }
 
-    private Map<String, Integer> getIndex(String[] idList) {
+    private Map<String, Integer> generateIndex(String[] idList) {
         int currentIndex = 0;
         Map<String, Integer> result = new HashMap<>();
         for (String s : idList) {
