@@ -40,7 +40,7 @@ public class Solution {
 
         return executeTime;
     }
-    
+
     /**
      * LRU 알고리즘 구현
      * @param executeTime
