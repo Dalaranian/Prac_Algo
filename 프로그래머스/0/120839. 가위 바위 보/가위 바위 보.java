@@ -1,13 +1,22 @@
+import java.util.Arrays;
+import java.util.stream.Collectors;
+
 class Solution {
     public String solution(String rsp) {
-        StringBuilder result = new StringBuilder();
-        for(char curr : rsp.toCharArray()){
-            switch (curr){
-                case '2' -> result.append("0");
-                case '0' -> result.append("5");
-                case '5' -> result.append("2");
-            }
-        }
-        return result.toString();
+                return Arrays.stream(rsp.split("")).map(row -> {
+                    switch (row){
+                        case "2" -> {
+                            return "0";
+                        }
+                        case "0" -> {
+                            return "5";
+                        }
+                        case "5" -> {
+                            return "2";
+                        }
+                        default -> throw new IllegalArgumentException();
+                    }
+                }
+        ).collect(Collectors.joining());
     }
 }
