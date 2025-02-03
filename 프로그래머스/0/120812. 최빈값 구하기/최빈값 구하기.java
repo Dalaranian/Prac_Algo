@@ -6,9 +6,15 @@ class Solution {
     
 public int solution(int[] array) {
     Map<Integer, Long> collect =
-            Arrays.stream(array).boxed().collect(Collectors.groupingBy(k -> k, Collectors.counting()));
+        Arrays.stream(array)
+        .boxed()
+        .collect(Collectors.groupingBy(k -> k, Collectors.counting()));
 
-    Long maxVal = collect.values().stream().max(Long::compareTo).orElseThrow(IllegalArgumentException::new);
+    Long maxVal = 
+        collect.values()
+            .stream()
+            .max(Long::compareTo)
+            .orElseThrow(IllegalArgumentException::new);
 
     int maxKey = 0;
     int count = 0;
