@@ -6,7 +6,7 @@ class Solution {
         int answer = 0;
 
         for (int i = 1; i <= n; i++) {
-            if (canSumable(i)) {
+            if (isSumable(i)) {
                 answer++;
             }
         }
@@ -14,7 +14,7 @@ class Solution {
         return answer;
     }
 
-    private boolean canSumable(int start) {
+    private boolean isSumable(int start) {
         int total = 0;
         for (int i = start; i <= target; i++) {
             total += i;
